@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill Reduction Calc</title>
+<style type="text/css">
+.dollar-sign {
+	text-align: right;
+margin-bottom: 5px;
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+	padding-right: 0px;
+	border-left: none;
+}
+.income-name {
+	text-align: right;
+	padding-right: 5px;
+	margin-bottom: 5px;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+}
+.number-table {
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-bottom: 5px;
+	width: 12px;
+	border: none;
+	width: 40px;
+}
+.total-row {
+	background-color: #CCC;
+}
+.align-middle {
+	text-align: center;
+	background-color: #D2F0FF;
+	border-right: none;
+	border-left: none;
+	font-size: 15px;
+	padding: 5px;
+}
+.pay-to-input {
+	auto;
+}
+.table-heading {
+	background-color: #FFFFC6;
+	text-align: center;
+	color: #0080C0;
+	padding: 3px;
+	text-decoration: none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.table-heading h1 {
+	font-size: 20px;
+}
+.btn {
+	font-size: 15px;
+	background-color: orange;
+	border: 6 outset black;
+	padding-top: 3px;
+	padding-right: 7px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	margin: 5px;
+}
+.small-button {
+	font-size: 15px;
+	background-color: orange;
+	border: 6 outset black;
+	padding-top: 3px;
+	padding-right: 7px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	margin: 5;
+}
+.calc-table {
+	padding-top: 5px;
+	padding-right: 8px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	text-align: center;
+	border-top: none;
+}
+.blank-spacer {
+	background-color: white;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+
+	padding-top:5px;
+}
+.div-wdith {
+position: relative;
+width: auto;
+}
+p {
+	width:auto;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+</style>
+<script type="text/javascript" src="jquery-1.js"></script>
+</head>
+
+<body style="margin:5px 0px 5px 0px">
+<div class="div-width">
+<table cellspacing="1" cellpadding="1" align="center" border="1">
+  <tbody><tr>
+    <td colspan="3" class="table-heading"><h1>Bill Reduction Calc (Monthly)</h1></td>
+  </tr>
+
+  <tr>
+    <td colspan="3" class="align-middle"> BALANCE - Use this table for current balances. </td>
+  </tr>
+   <tr>
+    <td class="income-name" width="237">Combined Bill</td>
+    <td class="dollar-sign" width="16">$</td>
+    <td class="number-table" "="" width="154">
+    <input id="cAct" class="balanceField" name="cAct" value="0" size="12" type="text">
+  
+</td>
+  </tr>
+  <tr>
+    <td class="income-name">Additional Billing</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">  
+    <input id="sAct" class="balanceField" name="sAct" value="0" size="12" type="text">
+    </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+      <input id="oAct" class="balanceField" name="oAct" value="0" size="12" type="text">  
+      </td>
+  </tr>
+
+    <tr>
+    <td colspan="3" class="calc-table">
+
+    
+    </td>
+    </tr>
+  <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+      <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+   <tr>
+    <td colspan="3" class="align-middle"> Current Billing - Use this table for total Bill. </td>
+  </tr>
+   <tr>
+    <td class="income-name">Phone Bill</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table" "="">
+    <input id="eInc" class="balanceField" name="eInc" value="0" size="12" type="text">
+    </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+   <input id="dInc" class="balanceField" name="dInc" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+    <input id="oInc" class="balanceField" name="oInc" value="0" size="12" type="text"> </td>
+  </tr>
+
+   <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+      <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+    <tr>
+    <td colspan="3" class="align-middle">Charges - Use this table for current charges. </td>
+    </tr>
+
+  <tr>
+    <td class="income-name">Standard fees(& Voicemail)</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp1" class="expField" name="exp1" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Roaming</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp2" class="expField" name="exp2" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Data Bandwith</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp3" class="expField" name="exp3" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Message fees(MMS/SMS)</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">  
+<input id="exp4" class="expField" name="exp4" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Administrative Fee</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp5" class="expField" name="exp5" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Surcharges & fees</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp6" class="expField" name="exp6" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Govt taxes & fees</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp7" class="expField" name="exp7" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Mobile Insurance</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp8" class="expField" name="exp8" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Addl. Regulatory Cost</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp9" class="expField" name="exp9" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Cloud Services</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp10" class="expField" name="exp10" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name">Miscellaneous</td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp11" class="expField" name="exp11" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp12" class="expField" name="exp12" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp13" class="expField" name="exp13" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+ 
+<input id="exp14" class="expField" name="exp14" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+<input id="exp15" class="expField" name="exp15" value="0" size="12" type="text"> </td>
+  </tr>
+  <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp16" class="expField" name="exp16" value="0" size="12" type="text"> </td>
+  </tr>
+ <!-- <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp17" class="expField" name="exp17" value="0" size="12" type="text"> </td>
+  </tr>
+    <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp18" class="expField" name="exp17" value="0" size="12" type="text"> </td>
+  </tr>
+    <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp19" class="expField" name="exp17" value="0" size="12" type="text"> </td>
+  </tr>
+    <tr>
+    <td class="income-name"><input value="" type="text" size="10" style="text-align: right"></td>
+    <td class="dollar-sign">$</td>
+    <td class="number-table">
+
+<input id="exp20" class="expField" name="exp17" value="0" size="12" type="text"> </td>
+  </tr> -->
+   <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+        <tr>
+    <td colspan="3" class="blank-spacer"></td>
+    </tr>
+   <tr>
+    <td colspan="3" class="calc-table">
+    <button id="bCalc" class="btn" onclick="return false">Calculate Budget</button> 
+	<!--<input type="button" value="Print" onClick="window.print();"> -->
+	</td>
+    </tr>
+  
+
+    <tr>
+    <td class="dollar-sign" bgcolor="orange">Budget Total&nbsp;</td>
+    <td class="dollar-sign" bgcolor="orange">$</td>
+    <td bgcolor="orange">
+      <input id="bTot" class="budgetAnswer" name="bTot" size="12" type="text">
+    </td>
+  </tr>
+
+
+</tbody></table></div>
+</form>
+
+<script type="text/javascript"><!--
+	$("#bCalc").click(function(){
+		var c,s,o; // Current Account Balances
+		var e,d,oi; // Current Income
+		var B; // Budget Calculation
+		//var exp1,exp2,exp3,exp4,exp5,exp6,exp7,exp8,exp9,exp10,exp11,exp12,exp13,exp14,exp15,exp16,exp17,exp18,exp19,exp20; // expenses
+		var exp1,exp2,exp3,exp4,exp5,exp6,exp7,exp8,exp9,exp10,exp11,exp12,exp13,exp14,exp15,exp16; // expenses
+		
+		c = parseFloat($("#cAct").val());
+		s = parseFloat($("#sAct").val());
+		o = parseFloat($("#oAct").val());
+		e = parseFloat($("#eInc").val());
+		d = parseFloat($("#dInc").val());
+		oi = parseFloat($("#oInc").val());
+		
+		exp1 = parseFloat($("#exp1").val());
+		exp2 = parseFloat($("#exp2").val());
+		exp3 = parseFloat($("#exp3").val());
+		exp4 = parseFloat($("#exp4").val());
+		exp5 = parseFloat($("#exp5").val());
+		exp6 = parseFloat($("#exp6").val());
+		exp7 = parseFloat($("#exp7").val());
+		exp8 = parseFloat($("#exp8").val());
+		exp9 = parseFloat($("#exp9").val());
+		exp10 = parseFloat($("#exp10").val());
+		exp11 = parseFloat($("#exp11").val());
+		exp12 = parseFloat($("#exp12").val());
+		exp13 = parseFloat($("#exp13").val());
+		exp14 = parseFloat($("#exp14").val());
+		exp15 = parseFloat($("#exp15").val());
+		exp16 = parseFloat($("#exp16").val());
+		//exp17 = parseFloat($("#exp17").val());
+		//exp18 = parseFloat($("#exp18").val());
+		//exp19 = parseFloat($("#exp19").val());
+		//exp20 = parseFloat($("#exp20").val());
+		
+		
+		// Budget Calculation
+		//B = c + s + o + e + d + oi - exp1 - exp2 - exp3 - exp4 - exp5 - exp6 - exp7 - exp8 - exp9 - exp10 - exp11 - exp12 - exp13 - exp14 - exp15 - exp16 - exp17 - exp18 - exp19 - exp20;
+		B = c + s + o + e + d + oi - exp1 - exp2 - exp3 - exp4 - exp5 - exp6 - exp7 - exp8 - exp9 - exp10 - exp11 - exp12 - exp13 - exp14 - exp15 - exp16
+		
+		if(!isNaN(B))
+		{
+			$("#bTot").val(B.toFixed(2));
+		}
+		else
+		{
+			$("#bTot").val('There was an error');
+		}
+		return false;
+	});
+	// email spambot deterrent
+ <!--
+var link = "Michael A. Stratton";
+var tag1 = "mail";
+var tag2 = "to:";
+var email1 = "%20mike";
+var email2 = "mikestratton";
+var email3 = ".net";
+// --></script>
+<div align=center><small><P nowrap>Copyright © 2011 
+ <SCRIPT language=JavaScript>
+ document.write("<a h" + "ref=" + tag1 + tag2 + email1 + "@" + email2 + email3 + ">" + link + ".</a>") </script>
+ All rights reserved.<br>*<em>If you use this JavaScript Budget Calculator, please link to this website. </em></p></small></div></div></body></html>
